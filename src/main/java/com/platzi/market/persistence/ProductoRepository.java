@@ -56,8 +56,7 @@ public class ProductoRepository implements ProductRepository   {
         return productEntity.map(product -> mapper.toProduct(product));
 
     }
-
-
+    
     /**
      * Save a product into the database
      * @param product The product object
