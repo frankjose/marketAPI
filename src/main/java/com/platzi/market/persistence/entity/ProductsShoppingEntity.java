@@ -52,4 +52,20 @@ public class ProductsShoppingEntity {
     public void setActive(Boolean active) {
         this.active = active;
     }
+
+    public ProductEntity getProductEntity() {
+        return productEntity;
+    }
+
+    public void setProductEntity(ProductEntity productEntity) {
+        this.productEntity = productEntity;
+    }
+
+    public ShoppingEntity getShoppingEntity() {
+        return shoppingEntity;
+    }
+
+    public void setShoppingEntity(ShoppingEntity shoppingEntity) {
+        this.shoppingEntity = shoppingEntity;
+    }
 }

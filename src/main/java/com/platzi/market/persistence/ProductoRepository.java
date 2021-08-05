@@ -5,6 +5,7 @@ import com.platzi.market.domain.repository.ProductRepository;
 import com.platzi.market.persistence.crud.ProductCrudRepository;
 import com.platzi.market.persistence.entity.ProductEntity;
 import com.platzi.market.persistence.mapper.ProductMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -16,7 +17,13 @@ import java.util.Optional;
 @Repository
 public class ProductoRepository implements ProductRepository   {
 
+    //@Autowired if for use the dependency injection, This is only for object that
+    // has a components or beans annotations of Spring
+
+    @Autowired
     private ProductCrudRepository productCrudRepository;
+
+    @Autowired
     private ProductMapper mapper;
     /**
      * Get all products list
@@ -37,11 +44,11 @@ public class ProductoRepository implements ProductRepository   {
      * @return List<Product>
      */
     @Override
-    public List<Product> getByCategory(int idCategory){
+    public Optional<List<Product>> getByCategory(int idCategory){
         //Retrieve the productsEntity throw to the ProductCrudRepository interface
-        List<ProductEntity> productsEntity =  productCrudRepository.findByIdCategoryOderByNameAcs(idCategory);
+        List<ProductEntity> productsEntity =  productCrudRepository.findByIdCategoryOrderByNameAsc(idCategory);
         //Mapping the productsEntity to Products domain
-        return mapper.toProducts(productsEntity);
+        return Optional.of(mapper.toProducts(productsEntity));
     }
 
     /**
@@ -56,7 +63,7 @@ public class ProductoRepository implements ProductRepository   {
         return productEntity.map(product -> mapper.toProduct(product));
 
     }
-    
+
     /**
      * Save a product into the database
      * @param product The product object

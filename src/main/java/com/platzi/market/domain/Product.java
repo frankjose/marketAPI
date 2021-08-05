@@ -12,6 +12,7 @@ public class Product {
     private int stock;
     private boolean active;
     private Category category;
+    private String code;
 
     public int getProductId() {
         return productId;
@@ -67,5 +68,13 @@ public class Product {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

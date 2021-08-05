@@ -22,7 +22,7 @@ public class CategoryEntity {
     /*
      * Shows a list of products associated with a category
      */
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "categoryEntity")
     private List<ProductEntity> productEntities;
 
     public Integer getIdCategory() {
@@ -47,5 +47,13 @@ public class CategoryEntity {
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public List<ProductEntity> getProductEntities() {
+        return productEntities;
+    }
+
+    public void setProductEntities(List<ProductEntity> productEntities) {
+        this.productEntities = productEntities;
     }
 }

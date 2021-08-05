@@ -22,7 +22,7 @@ public interface ProductRepository {
      * @param idCategory The id of a category
      * @return List<Product>
      */
-    List<Product> getByCategory(int idCategory);
+    Optional<List<Product>> getByCategory(int idCategory);
 
     /**
      *  Retrieve a product by Id

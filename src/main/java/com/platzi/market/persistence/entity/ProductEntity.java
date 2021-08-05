@@ -28,8 +28,6 @@ public class ProductEntity {
     @JoinColumn(name = "id_category", insertable = false, updatable = false) //Is for not insert or update a Category is only for get one
     private CategoryEntity categoryEntity;
 
-    @OneToMany(mappedBy = "product")
-    private List<ProductsShoppingEntity> productsShoppingsEntity;
 
     public Integer getIdProduct() {
         return idProduct;
@@ -85,5 +83,13 @@ public class ProductEntity {
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public CategoryEntity getCategoryEntity() {
+        return categoryEntity;
+    }
+
+    public void setCategoryEntity(CategoryEntity categoryEntity) {
+        this.categoryEntity = categoryEntity;
     }
 }

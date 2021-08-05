@@ -20,7 +20,7 @@ public interface ProductCrudRepository extends CrudRepository<ProductEntity, Int
      * @param idCategory
      * @return List<Product>
      */
-    List<ProductEntity> findByIdCategoryOderByNameAcs(int idCategory);
+    List<ProductEntity> findByIdCategoryOrderByNameAsc(int idCategory);
 
     /**
      * Retrieve the products with less stock

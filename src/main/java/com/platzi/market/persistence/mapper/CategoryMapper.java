@@ -29,7 +29,7 @@ public interface CategoryMapper {
      * @return The Entity
      */
     @InheritInverseConfiguration
-    @Mapping(target = "products", ignore = true)
+    @Mapping(target = "productEntities", ignore = true)
     CategoryEntity toEntityCategory(Category category);
 
 }

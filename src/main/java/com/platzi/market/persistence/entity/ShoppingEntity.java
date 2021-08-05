@@ -28,7 +28,7 @@ public class ShoppingEntity {
     @JoinColumn(name = "id_clients", updatable = false, insertable = false)
     private ClientEntity clientEntity;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "productEntity")
     private List<ProductsShoppingEntity> products;
 
     public Integer getIdShopping() {
@@ -77,5 +77,21 @@ public class ShoppingEntity {
 
     public void setIdClients(Integer idClients) {
         this.idClients = idClients;
+    }
+
+    public ClientEntity getClientEntity() {
+        return clientEntity;
+    }
+
+    public void setClientEntity(ClientEntity clientEntity) {
+        this.clientEntity = clientEntity;
+    }
+
+    public List<ProductsShoppingEntity> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<ProductsShoppingEntity> products) {
+        this.products = products;
     }
 }

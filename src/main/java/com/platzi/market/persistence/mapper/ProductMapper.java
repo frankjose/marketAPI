@@ -22,12 +22,13 @@ public interface ProductMapper {
      * @return The Product Domain
      */
     @Mappings({
-            @Mapping(source = "productId", target = "idProduct"),
+            @Mapping(source = "idProduct", target = "productId"),
             @Mapping(source = "name", target = "name"),
-            @Mapping(source = "categoryId", target = "idCategory"),
-            @Mapping(source = "stock", target = "stockQuantity"),
+            @Mapping(source = "idCategory", target = "categoryId"),
+            @Mapping(source = "stockQuantity", target = "stock"),
             @Mapping(source = "active", target = "active"),
-            @Mapping(source = "category", target = "category"),
+            @Mapping(source = "categoryEntity", target = "category"),
+            @Mapping(source = "code", target = "code"),
     })
     Product toProduct(ProductEntity productEntity);
     List<Product> toProducts(List<ProductEntity> productEntities);

@@ -21,7 +21,7 @@ public class ClientEntity {
     private String addres;
     private String email;
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "clientEntity")
     private List<ShoppingEntity> shoppingEntities;
 
     public Integer getIdClients() {
